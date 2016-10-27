@@ -1,0 +1,2 @@
+# JavaOctoberCourse
+My completed assignments
