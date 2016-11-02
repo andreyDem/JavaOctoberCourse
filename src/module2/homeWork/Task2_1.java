@@ -138,16 +138,16 @@ public class Task2_1 {
     }
 
     static void modulus(int[] arr) {
-        if (arr[0] < 0)
+        if (arr[0] < 0 || arr[0] < arr[arr.length-1] || arr[arr.length-1] < 0)
             System.out.println(0);
-
+        else
             System.out.println(arr[0] % arr[arr.length - 1]);
     }
 
     static void modulus(double[] arr) {
-        if (arr[0] < 0)
+        if (arr[0] < 0 || arr[0] < arr[arr.length-1] || arr[arr.length-1] < 0)
             System.out.println(0);
-
+        else
             System.out.println(arr[0] % arr[arr.length - 1]);
     }
 

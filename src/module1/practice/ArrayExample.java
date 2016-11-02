@@ -22,6 +22,5 @@ public class ArrayExample {
             System.out.println(i);
         }
 
-
     }
 }
