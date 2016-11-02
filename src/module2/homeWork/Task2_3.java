@@ -22,19 +22,19 @@ public class Task2_3 {
         double commision = 5.0D * withdrawal / 100.0D;
         int counter = -1;
 
-        for(int total = 0; total < owner.length; ++total) {
-            if(name.equals(owner[total])) {
+        for (int total = 0; total < owner.length; ++total) {
+            if (name.equals(owner[total])) {
                 counter = total;
                 break;
             }
         }
-        if (counter<0) {
+        if (counter < 0) {
             System.out.println("Name Incorrect");
             System.exit(0);
         }
 
-        double var10 = (double)balanceOwner[counter] - withdrawal - commision;
-        if(var10 >= 0.0D) {
+        double var10 = (double) balanceOwner[counter] - withdrawal - commision;
+        if (var10 >= 0.0D) {
             System.out.println(name + " " + withdrawal + " " + var10);
         } else {
             System.out.println(name + " NO");
