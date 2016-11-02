@@ -14,8 +14,8 @@ public class ArrayExample {
             System.out.println(array[index]);
             index--;
         }
-        for (int i = 0; i <array1.length ; i++) {
-            System.out.println(array1[i]);
+        for (int anArray1 : array1) {
+            System.out.println(anArray1);
         }
 
         for (int i : array1) {
