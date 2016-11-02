@@ -20,13 +20,17 @@ public class Task2_3 {
 
     static void withdrawMoney(String[] owner, int[] balanceOwner, String name, double withdrawal) {
         double commision = 5.0D * withdrawal / 100.0D;
-        int counter = 0;
+        int counter = -1;
 
         for(int total = 0; total < owner.length; ++total) {
             if(name.equals(owner[total])) {
                 counter = total;
                 break;
             }
+        }
+        if (counter<0) {
+            System.out.println("Name Incorrect");
+            System.exit(0);
         }
 
         double var10 = (double)balanceOwner[counter] - withdrawal - commision;
