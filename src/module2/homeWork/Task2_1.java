@@ -123,14 +123,15 @@ public class Task2_1 {
         if (positive < 0) {
             System.out.println("There is no positive elements in array");
             System.exit(0);
-
-            for (int i = 0; i < arr.length; i++) {
-                if (arr[i] > 0 && arr[i] > positive)
-                    positive = arr[i];
-            }
-            System.out.println(positive);
         }
+
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] > 0 && arr[i] > positive)
+                positive = arr[i];
+        }
+        System.out.println(positive);
     }
+
 
     static void multiplication(int[] arr) {
         long mult = arr[0];
