@@ -4,8 +4,6 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Task2_3 {
-    public Task2_3() {
-    }
 
     public static void main(String[] args) {
         int[] balances = new int[]{1200, 250, 2000, 500, 3200};

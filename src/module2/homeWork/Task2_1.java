@@ -1,4 +1,5 @@
 package module2.homeWork;
+
 import java.util.Arrays;
 
 public class Task2_1 {
@@ -36,6 +37,7 @@ public class Task2_1 {
         System.out.println();
         secondLargest(arr1);
         secondLargest(arr2);
+
 
     }
 
@@ -92,12 +94,16 @@ public class Task2_1 {
     }
 
     static void maxPositive(int[] arr) {
-        int positive = 0;
+        int positive = -1;
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] > 0) {
                 positive = arr[i];
                 break;
             }
+        }
+        if (positive < 0) {
+            System.out.println("There is no positive elements in array");
+            System.exit(0);
         }
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] > 0 && arr[i] > positive)
@@ -107,18 +113,23 @@ public class Task2_1 {
     }
 
     static void maxPositive(double[] arr) {
-        double positive = 0;
+        double positive = -1;
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] > 0) {
                 positive = arr[i];
                 break;
             }
         }
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] > 0 && arr[i] > positive)
-                positive = arr[i];
+        if (positive < 0) {
+            System.out.println("There is no positive elements in array");
+            System.exit(0);
+
+            for (int i = 0; i < arr.length; i++) {
+                if (arr[i] > 0 && arr[i] > positive)
+                    positive = arr[i];
+            }
+            System.out.println(positive);
         }
-        System.out.println(positive);
     }
 
     static void multiplication(int[] arr) {
@@ -138,26 +149,44 @@ public class Task2_1 {
     }
 
     static void modulus(int[] arr) {
-        if (arr[0] < 0 || arr[0] < arr[arr.length-1] || arr[arr.length-1] < 0)
+        if (arr[0] < 0 || arr[0] < arr[arr.length - 1] || arr[arr.length - 1] < 0)
             System.out.println(0);
         else
             System.out.println(arr[0] % arr[arr.length - 1]);
     }
 
     static void modulus(double[] arr) {
-        if (arr[0] < 0 || arr[0] < arr[arr.length-1] || arr[arr.length-1] < 0)
+        if (arr[0] < 0 || arr[0] < arr[arr.length - 1] || arr[arr.length - 1] < 0)
             System.out.println(0);
         else
             System.out.println(arr[0] % arr[arr.length - 1]);
     }
 
     static void secondLargest(int[] arr) {
-        Arrays.sort(arr);
-        System.out.println(arr[arr.length-2]);
+        for (int i = arr.length - 1; i > 0; i--) {
+            for (int j = 0; j < i; j++) {
+
+                if (arr[j] > arr[j + 1]) {
+                    int tmp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = tmp;
+                }
+            }
+        }
+        System.out.println(arr[arr.length - 2]);
     }
 
     static void secondLargest(double[] arr) {
-        Arrays.sort(arr);
-        System.out.println(arr[arr.length-2]);
+        for (int i = arr.length - 1; i > 0; i--) {
+            for (int j = 0; j < i; j++) {
+
+                if (arr[j] > arr[j + 1]) {
+                    double tmp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = tmp;
+                }
+            }
+        }
+        System.out.println(arr[arr.length - 2]);
     }
 }
