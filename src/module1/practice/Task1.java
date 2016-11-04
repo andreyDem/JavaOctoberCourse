@@ -4,24 +4,27 @@ import java.util.Arrays;
 
 public class Task1 {
     public static void main(String[] args) {
-        int[] balances = {100, 5400, 4321, 980, -50, 0};
-        String[] name = {"Test1", "Andrey", "Alex", "User", " Olga", "Pasha"};
+        int[] balances = {100, 5400, 4321, 980, -50, 100};
+        String[] names = {"Test1", "Andrey", "Alex", "User", " Olga", "Pasha"};
         int count = 0;
-        for (int i : balances) {
-            if (balances[i] > 1000) {
-                count++;
+        for (int bal : balances) {
+            if (bal > 1000) {
+                count = count + 1;
+                //count
             }
         }
-        String[] owner = new String[count];
+
+        String[] owners = new String[count];
+
         int index = 0;
-        int indexOwner = 0;
-        for (int i : balances) {
-            if (balances[i] > 1000) {
-                owner[indexOwner] = name[index];
-                indexOwner++;
+        int indexOwners = 0;
+        for (int bal : balances) {
+            if (bal > 1000) {
+                owners[indexOwners] = names[index];
+                indexOwners++;
             }
             index++;
         }
-        System.out.println(Arrays.toString(owner));
+        System.out.println(Arrays.toString(owners));
     }
 }
