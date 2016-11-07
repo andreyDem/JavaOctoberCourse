@@ -35,8 +35,8 @@ public class Task2_1 {
         modulus(arr1);
         modulus(arr2);
         System.out.println();
-        secondLargest(arr1);
-        secondLargest(arr2);
+       // secondLargest(arr1);
+        //secondLargest(arr2);
 
 
     }
@@ -163,31 +163,31 @@ public class Task2_1 {
             System.out.println(arr[0] % arr[arr.length - 1]);
     }
 
-    static void secondLargest(int[] arr) {
-        for (int i = arr.length - 1; i > 0; i--) {
-            for (int j = 0; j < i; j++) {
-
-                if (arr[j] > arr[j + 1]) {
-                    int tmp = arr[j];
-                    arr[j] = arr[j + 1];
-                    arr[j + 1] = tmp;
-                }
-            }
-        }
-        System.out.println(arr[arr.length - 2]);
-    }
-
-    static void secondLargest(double[] arr) {
-        for (int i = arr.length - 1; i > 0; i--) {
-            for (int j = 0; j < i; j++) {
-
-                if (arr[j] > arr[j + 1]) {
-                    double tmp = arr[j];
-                    arr[j] = arr[j + 1];
-                    arr[j + 1] = tmp;
-                }
-            }
-        }
-        System.out.println(arr[arr.length - 2]);
-    }
+//    static void secondLargest(int[] arr) {
+//        for (int i = arr.length - 1; i > 0; i--) {
+//            for (int j = 0; j < i; j++) {
+//
+//                if (arr[j] > arr[j + 1]) {
+//                    int tmp = arr[j];
+//                    arr[j] = arr[j + 1];
+//                    arr[j + 1] = tmp;
+//                }
+//            }
+//        }
+//        System.out.println(arr[arr.length - 2]);
+//    }
+//
+//    static void secondLargest(double[] arr) {
+//        for (int i = arr.length - 1; i > 0; i--) {
+//            for (int j = 0; j < i; j++) {
+//
+//                if (arr[j] > arr[j + 1]) {
+//                    double tmp = arr[j];
+//                    arr[j] = arr[j + 1];
+//                    arr[j + 1] = tmp;
+//                }
+//            }
+//        }
+//        System.out.println(arr[arr.length - 2]);
+//    }
 }
