@@ -5,7 +5,7 @@ import java.util.Date;
 public class Solution {
 
     Course course1 = new Course(new Date(), "Andrey");
-    Course course2 = new Course(new Date(), "Andrey");
+    Course course2 = new Course(new Date(), "Dmitriy");
     Course course3 = new Course(60, "Vasiliy", "Petrovich");
     Course course4 = new Course(120, "Stepan", "Kostya");
     Course course5 = new Course(180, "Denis", "Glebka");
