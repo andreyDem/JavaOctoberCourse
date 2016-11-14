@@ -16,6 +16,7 @@ public class ArraysMatrix {
             System.out.println(Arrays.toString(createRandomArray(n)));
         }
 
+
     }
 
     private static int[] createRandomArray(int n) {
@@ -24,5 +25,21 @@ public class ArraysMatrix {
             arr[i] = (int) ((Math.random()-0.5)*100);
         }
         return arr;
+    }
+
+    private static int[][] createNewArray(int n){
+        int [][] arr = new int[n][n];
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j <arr[i].length ; j++) {
+            }
+        }
+        return arr;
+    }
+
+    private static int[][] reverseArray(int[][] array){
+        for (int i = array.length-1; i >0 ; i--) {
+
+        }
+        return array;
     }
 }

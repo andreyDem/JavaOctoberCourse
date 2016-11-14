@@ -7,7 +7,7 @@ public class Convertation {
         this.course = course;
     }
 
-    public double convertToDol(int grvn){
+    public double convertToDol(double grvn){
         return grvn * course;
     }
 
