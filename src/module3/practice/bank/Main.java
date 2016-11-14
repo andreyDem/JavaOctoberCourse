@@ -1,4 +1,4 @@
-package module3.practice.Bank;
+package module3.practice.bank;
 
 public class Main {
     public static void main(String[] args) {
