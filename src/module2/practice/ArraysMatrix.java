@@ -27,19 +27,19 @@ public class ArraysMatrix {
         return arr;
     }
 
-    private static int[][] createNewArray(int n){
-        int [][] arr = new int[n][n];
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j <arr[i].length ; j++) {
-            }
-        }
-        return arr;
-    }
+//    private static int[][] createNewArray(int n){
+//        int [][] arr = new int[n][n];
+//        for (int i = 0; i < arr.length; i++) {
+//            for (int j = 0; j <arr[i].length ; j++) {
+//            }
+//        }
+//        return arr;
+//    }
 
-    private static int[][] reverseArray(int[][] array){
+    private static void reverseArray(int[] array){
         for (int i = array.length-1; i >0 ; i--) {
-
+            System.out.println(Arrays.toString(createRandomArray(5)));
         }
-        return array;
+
     }
 }

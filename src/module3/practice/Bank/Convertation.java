@@ -8,7 +8,7 @@ public class Convertation {
     }
 
     public double convertToDol(double grvn){
-        return grvn * course;
+        return grvn / course;
     }
 
 }
