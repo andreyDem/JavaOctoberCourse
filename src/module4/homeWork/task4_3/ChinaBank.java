@@ -10,22 +10,23 @@ public class ChinaBank extends Bank{
     }
 
     @Override
-    public int getLimitOfWithdrawal() {
+    protected int getLimitOfWithdrawal() {
         return 0;
     }
 
     @Override
-    public int getLimitOfFunding() {
+    protected int getLimitOfFunding() {
         return 0;
     }
 
     @Override
-    public int getMonthlyRate() {
+    protected int getMonthlyRate() {
         return 0;
     }
 
     @Override
-    public int getCommission(int summ) {
+    protected int getCommission(int summ) {
         return 0;
     }
+
 }
