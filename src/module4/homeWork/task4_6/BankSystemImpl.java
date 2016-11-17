@@ -6,7 +6,7 @@ public class BankSystemImpl implements BankSystem{
 
     @Override
     public void withdrawOfUser(User user, int amount) {
-
+        if (user.getBalance())
     }
 
     @Override
