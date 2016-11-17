@@ -33,12 +33,13 @@ public class Main {
 
         BankSystem system = new BankSystemImpl();
         system.fundUser(user1, 100);
-        System.out.println("user1Balance=" + user1.getBalance());
+        System.out.println("user1Balance= " + user1.getBalance());
         system.paySalary(user2);
         System.out.println("user2Balance= " +user2.getBalance());
         system.withdrawOfUser(user1, 2000);
         System.out.println("user1Balance= " +user1.getBalance());
         system.transferMoney(user2, user3, 5000);
-        System.out.println("user2Balance= " + user2.getBalance() + " user3Balance= " + user3.getBalance());
+        System.out.println("user2Balance= " + user2.getBalance() + " user3Balance= " +
+                user3.getBalance());
     }
 }
