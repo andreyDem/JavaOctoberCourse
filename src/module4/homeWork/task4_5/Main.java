@@ -6,6 +6,8 @@ import module4.homeWork.task4_3.ChinaBank;
 import module4.homeWork.task4_3.EUBank;
 import module4.homeWork.task4_3.USBank;
 import module4.homeWork.task4_4.User;
+import module4.homeWork.task4_6.BankSystem;
+import module4.homeWork.task4_6.BankSystemImpl;
 
 public class Main {
     public static void main(String[] args) {
@@ -17,18 +19,26 @@ public class Main {
         Bank chicagoBank = new USBank(6453, "Chicago", Currency.EUR, 21, 500, 45331, 534512);
         Bank newYorkBank = new USBank(23412, "NewYork", Currency.USD, 132, 2000, 13224, 322513232);
 
-        User user1 = new User(1, "Petrov", 7000.50, 10,"Luxoft", 3000, pekinBank);
-        User user2 = new User(2, "Semen", 15050.80, 25,"Epam", 3200, sianBank);
-        User user3 = new User(3, "Olga", 50, 2,"WG", 700, parisBank);
-        User user4 = new User(4, "Anna", 12320.33, 33,"InfoPulse", 4000, berlinBank);
-        User user5 = new User(5, "Stanislav", 50000, 12,"SoftServe", 5500, chicagoBank);
-        User user6 = new User(6, "Andrey", 1333.30, 7,"GlobalLogic", 1200, newYorkBank);
+        User user1 = new User(1, "Petrov", 7000.50, 10, "Luxoft", 3000, pekinBank);
+        User user2 = new User(2, "Semen", 15050.80, 25, "Epam", 3200, sianBank);
+        User user3 = new User(3, "Olga", 50, 2, "WG", 700, parisBank);
+        User user4 = new User(4, "Anna", 12320.33, 33, "InfoPulse", 4000, berlinBank);
+        User user5 = new User(5, "Stanislav", 50000, 12, "SoftServe", 5500, chicagoBank);
+        User user6 = new User(6, "Andrey", 1333.30, 7, "GlobalLogic", 1200, newYorkBank);
 
         User[] users = {user1, user2, user3, user4, user5, user6};
         for (User number : users) {
             System.out.println(number);
         }
 
-
+        BankSystem system = new BankSystemImpl();
+        system.fundUser(user1, 100);
+        System.out.println("user1Balance=" + user1.getBalance());
+        system.paySalary(user2);
+        System.out.println("user2Balance= " +user2.getBalance());
+        system.withdrawOfUser(user1, 2000);
+        System.out.println("user1Balance= " +user1.getBalance());
+        system.transferMoney(user2, user3, 5000);
+        System.out.println("user2Balance= " + user2.getBalance() + " user3Balance= " + user3.getBalance());
     }
 }
