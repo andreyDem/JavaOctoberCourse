@@ -10,7 +10,7 @@ public class ChinaBank extends Bank {
     }
 
     @Override
-    protected int getLimitOfWithdrawal() {
+     public int getLimitOfWithdrawal() {
         int value = 0;
 
         if (getCurrency().equals(Currency.USD))
@@ -21,7 +21,7 @@ public class ChinaBank extends Bank {
     }
 
     @Override
-    protected int getLimitOfFunding() {
+    public int getLimitOfFunding() {
         int value = 0;
 
         if (getCurrency().equals(Currency.USD))
@@ -32,7 +32,7 @@ public class ChinaBank extends Bank {
     }
 
     @Override
-    protected int getMonthlyRate() {
+    public int getMonthlyRate() {
         int value = 0;
 
         if (getCurrency().equals(Currency.USD))
@@ -43,7 +43,7 @@ public class ChinaBank extends Bank {
     }
 
     @Override
-    protected int getCommission(int summ) {
+    public int getCommission(int summ) {
         int value = 0;
 
         if (getCurrency().equals(Currency.USD)) {
