@@ -21,11 +21,15 @@ public class BankSystemImpl implements BankSystem {
 
     @Override
     public void transferMoney(User fromUser, User toUser, int amount) {
-        if (fromUser.getBalance() >= amount) {
-            fromUser.setBalance(fromUser.getBalance() - amount);
-            toUser.setBalance(toUser.getBalance() + amount);
-        } else
-            System.out.println("Your amount: " + amount + " is bigger than your balance: " + fromUser.getBalance());
+        if (fromUser.getBank().getCurrency().equals(toUser.getBank().getCurrency())) {
+            if (fromUser.getBalance() >= amount) {
+                fromUser.setBalance(fromUser.getBalance() - amount);
+                toUser.setBalance(toUser.getBalance() + amount);
+            } else
+                System.out.println("Your amount: " + amount + " is bigger than your balance: " + fromUser.getBalance());
+        }
+        if (!fromUser.getBank().getCurrency().equals(toUser.getBank().getCurrency()))
+            System.out.println("Balance is not in the same currency");
     }
 
     @Override
@@ -33,3 +37,4 @@ public class BankSystemImpl implements BankSystem {
         user.setBalance(user.getBalance() + user.getSalary());
     }
 }
+
