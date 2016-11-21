@@ -1,5 +1,7 @@
 package module3.practice.task3;
 
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
         Worker worker1 = new Worker("male", "Andrey", 25, "Demchuk", "Ma9kovskogo str", 5000);
@@ -21,5 +23,29 @@ public class Main {
         }
         System.out.println(sum);
 
+    }
+
+    public Worker[] mixWorkers(Worker[] workers) {
+        Worker[] works = new Worker[workers.length];
+        int[] arr = new int[workers.length];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = workers[i].getSalary();
+        }
+        Arrays.sort(arr);
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i; j <workers.length ; j++) {
+                if (workers[j].getSalary()==arr[i])
+                    works[i] = workers[j];
+            }
+        }
+
+//        for (int i = arr.length - 1; i > 0; i--) {
+//            for (int j = 0; j < i; j++) {
+//                if (arr[i] == arr[j]){
+//                    workers[i]
+//                }
+//            }
+//        }
+        return workers;
     }
 }
