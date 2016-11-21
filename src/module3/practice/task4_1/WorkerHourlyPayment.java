@@ -14,5 +14,4 @@ public class WorkerHourlyPayment extends Worker{
     public double getHourlyPayment() {
         return hourlyPayment;
     }
-
 }
