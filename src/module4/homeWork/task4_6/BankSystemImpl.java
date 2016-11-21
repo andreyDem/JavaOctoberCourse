@@ -39,6 +39,7 @@ public class BankSystemImpl implements BankSystem {
         }
         if (!fromUser.getBank().getCurrency().equals(toUser.getBank().getCurrency()))
             System.out.println("Balance is not in the same currency");
+
     }
 
     @Override
