@@ -9,13 +9,12 @@ public class BankSystemImpl implements BankSystem {
     @Override
     public void withdrawOfUser(User user, int amount) {
         double comission = (amount * user.getBank().getCommission(amount) / 100);
-        if (amount <= user.getBank().getLimitOfWithdrawal()){
+        if (amount <= user.getBank().getLimitOfWithdrawal()) {
             if (user.getBalance() - amount - comission >= 0)
                 user.setBalance(user.getBalance() - amount - comission);
             else
                 System.out.println("Not enough money on your balance: " + user.getBalance());
-        }
-        else
+        } else
             System.out.println("Your amount: " + amount +
                     " is bigger than your withdrawal limit: " + user.getBank().getLimitOfWithdrawal());
     }
