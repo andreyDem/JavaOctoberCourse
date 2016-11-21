@@ -41,5 +41,7 @@ public class Main {
         system.transferMoney(user2, user3, 5000);
         System.out.println("user2Balance= " + user2.getBalance() + " user3Balance= " +
                 user3.getBalance());
+        system.fundUser(user4, 20000);
+        System.out.println("user1Balance= " + user4.getBalance());
     }
 }

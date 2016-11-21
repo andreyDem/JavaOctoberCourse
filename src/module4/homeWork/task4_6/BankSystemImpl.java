@@ -1,5 +1,6 @@
 package module4.homeWork.task4_6;
 
+import module4.homeWork.task4_2.Currency;
 import module4.homeWork.task4_4.User;
 
 
@@ -8,15 +9,24 @@ public class BankSystemImpl implements BankSystem {
     @Override
     public void withdrawOfUser(User user, int amount) {
         double comission = (amount * user.getBank().getCommission(amount) / 100);
-        if (user.getBalance() - amount - comission >= 0)
-            user.setBalance(user.getBalance() - amount - comission);
+        if (amount <= user.getBank().getLimitOfWithdrawal()){
+            if (user.getBalance() - amount - comission >= 0)
+                user.setBalance(user.getBalance() - amount - comission);
+            else
+                System.out.println("Not enough money on your balance: " + user.getBalance());
+        }
         else
-            System.out.println("Not enough money on your balance: " + user.getBalance());
+            System.out.println("Your amount: " + amount +
+                    " is bigger than your withdrawal limit: " + user.getBank().getLimitOfWithdrawal());
     }
 
     @Override
     public void fundUser(User user, int amount) {
-        user.setBalance(user.getBalance() + amount);
+        if (amount <= user.getBank().getLimitOfFunding())
+            user.setBalance(user.getBalance() + amount);
+        else
+            System.out.println("Error, your limit of funding: " + user.getBank().getLimitOfFunding() + "" +
+                    " and your now fund is: " + amount);
     }
 
     @Override
