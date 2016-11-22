@@ -1,7 +1,6 @@
-package module4.practice.dao1;
+package module4.practice.daoTest;
 
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class RusMonthDAO implements MonthDAO {
