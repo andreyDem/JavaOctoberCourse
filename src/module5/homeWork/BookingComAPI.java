@@ -1,5 +1,6 @@
 package module5.homeWork;
 
+import java.util.Arrays;
 import java.util.Date;
 
 public class BookingComAPI implements API{
@@ -17,5 +18,12 @@ public class BookingComAPI implements API{
     @Override
     public Room[] findRooms(int price, int persons, String city, String hotel) {
         return new Room[0];
+    }
+
+    @Override
+    public String toString() {
+        return "BookingComAPI{" +
+                "rooms=" + Arrays.toString(rooms) +
+                '}';
     }
 }

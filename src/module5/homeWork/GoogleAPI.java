@@ -1,5 +1,6 @@
 package module5.homeWork;
 
+import java.util.Arrays;
 import java.util.Date;
 
 public class GoogleAPI implements API{
@@ -16,5 +17,12 @@ public class GoogleAPI implements API{
     @Override
     public Room[] findRooms(int price, int persons, String city, String hotel) {
         return new Room[0];
+    }
+
+    @Override
+    public String toString() {
+        return "GoogleAPI{" +
+                "rooms=" + Arrays.toString(rooms) +
+                '}';
     }
 }

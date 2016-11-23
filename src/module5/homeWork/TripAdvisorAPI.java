@@ -1,5 +1,6 @@
 package module5.homeWork;
 
+import java.util.Arrays;
 import java.util.Date;
 
 public class TripAdvisorAPI implements API{
@@ -16,5 +17,12 @@ public class TripAdvisorAPI implements API{
     @Override
     public Room[] findRooms(int price, int persons, String city, String hotel) {
         return rooms;
+    }
+
+    @Override
+    public String toString() {
+        return "TripAdvisorAPI{" +
+                "rooms=" + Arrays.toString(rooms) +
+                '}';
     }
 }
