@@ -1,29 +1,51 @@
 package module5.homeWork;
 
-import java.util.Arrays;
 import java.util.Date;
 
-public class BookingComAPI implements API{
+public class BookingComAPI implements API {
 
-    Room[] rooms;
+    Room[] rooms = new Room[5];
 
-    public BookingComAPI(Room[] rooms) {
-        rooms[0] = new Room(1, 100, 1, new Date(100), "President", "Kiev");
-        rooms[1] = new Room(2, 100, 1, new Date(150), "President", "Kiev");
-        rooms[2] = new Room(3, 200, 2, new Date(0), "President", "Kiev");
-        rooms[3] = new Room(4, 200, 2, new Date(100), "President", "Kiev");
-        rooms[4] = new Room(5, 300, 3, new Date(500), "President", "Kiev");
+    public BookingComAPI() {
+        Room roomSngl = new Room(5, 500, 1, new Date(), "ParkInn", "NY");
+        rooms[0] = roomSngl;
+        Room roomDbl = new Room(4, 500, 1, new Date(), "Hilton", "Chicago");
+        rooms[1] = roomDbl;
+        Room roomTwn = new Room(3, 580, 3, new Date(), "MaxHotel", "Florida"); // the same with Google
+        rooms[2] = roomTwn;
+        Room roomLux = new Room(2, 800, 5, new Date(), "Houston", "Washington");
+        rooms[3] = roomLux;
+        Room roomLuxery = new Room(1, 1100, 2, new Date(), "MaxHotel", "Amsterdam");// the same with TripAdvisor
+        rooms[4] = roomLuxery;
     }
 
     @Override
     public Room[] findRooms(int price, int persons, String city, String hotel) {
-        return new Room[0];
+        Room[] founded = new Room[5];
+        Room request = new Room(0, price, persons, new Date(), hotel, city);
+        int index = 0;
+        for (Room room : rooms) {
+            if (hotel == null) {
+                if (room.equals(request)) {
+                    founded[index] = room;
+                    System.out.println(founded[index]);
+                    index++;
+                }
+            } else {
+                if (room.equals(request) && hotel == room.getHotelName()) {
+                    founded[index] = room;
+                    System.out.println(founded[index]);
+                    index++;
+                }
+            }
+        }
+        return founded;
     }
 
     @Override
-    public String toString() {
-        return "BookingComAPI{" +
-                "rooms=" + Arrays.toString(rooms) +
-                '}';
+    public Room[] getAll() {
+        return rooms;
     }
+
+
 }
