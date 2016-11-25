@@ -33,8 +33,10 @@ public class Room {
 
     @Override
     public int hashCode() {
-
-        return Objects.hash(id, price, persons, dateAvailableFrom, hotelName, cityName);
+        int result = price;
+        result = 31 * result + persons;
+        result = 31 * result + cityName.hashCode();
+        return result;
     }
 
     public long getId() {
