@@ -11,9 +11,11 @@ public class User {
         this.connection = connection;
     }
 
-    public static Connection getConnection(){
-
+    public static Connection getConnection() {
         return connection;
     }
 
+    public static void setConnection(Connection connection) {
+        User.connection = connection;
+    }
 }
