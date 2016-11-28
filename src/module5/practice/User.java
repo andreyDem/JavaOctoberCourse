@@ -8,7 +8,6 @@ public class User {
     public User(int id, String name, Connection connection) {
         this.id = id;
         this.name = name;
-        this.connection = connection;
     }
 
     public static Connection getConnection() {
