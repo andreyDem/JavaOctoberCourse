@@ -20,6 +20,5 @@ public class Main {
         Room[] roomsSame2 = controller.check(google, tripAdvisor);
         Room[] roomsSame3 = controller.check(tripAdvisor, booking);
 
-
     }
 }
