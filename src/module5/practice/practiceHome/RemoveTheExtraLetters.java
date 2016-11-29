@@ -30,18 +30,25 @@ public class RemoveTheExtraLetters {
         return newStr;
     }
 
-    public static String changeUseCharAt(String str, char a){
+    public static String changeUseCharAt(String str, char a) {
         String newStr = "";
         for (int i = 0; i < str.length(); i++) {
-            if (str.charAt(i)!=a){
+            if (str.charAt(i) != a) {
                 newStr = newStr + str.charAt(i);
-            }
-            else continue;
+            } else continue;
         }
         return newStr;
     }
 
-
+    public static String changeUseSubstring(String str, char a) {
+        String newStr = "";
+        for (int i = 0; i < str.length(); i++) {
+            if (str.substring(i, i+1).equals(a + ""))
+                continue;
+            else newStr = newStr + str.substring(i, i+1);
+        }
+        return newStr;
+    }
 
 
 }
