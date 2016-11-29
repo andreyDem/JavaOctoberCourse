@@ -18,7 +18,6 @@ public class Main {
 //        System.out.println(changeUseReplace(str, chars));
 //        System.out.println(changeUseSplit(str, chars));
 //        System.out.println(changeUseCharAt(str, chars));
-
         System.out.println(changeUseSubstring(str, chars));
 
 
