@@ -12,13 +12,15 @@ public class Main {
         String str = scanner.nextLine();
         System.out.println("Enter char");
         String ch = scanner.nextLine();
-        char chars = ch.charAt(0);
+        char charA = ch.charAt(0);
 
-//        System.out.println(changeUseToCharArray(str, chars));
-//        System.out.println(changeUseReplace(str, chars));
-//        System.out.println(changeUseSplit(str, chars));
-//        System.out.println(changeUseCharAt(str, chars));
-        System.out.println(changeUseSubstring(str, chars));
+//        System.out.println(changeUseToCharArray(str, charA));
+//        System.out.println(changeUseReplace(str, charA));
+//        System.out.println(changeUseSplit(str, charA));
+//        System.out.println(changeUseCharAt(str, charA));
+//        System.out.println(changeUseSubstring(str, charA));
+
+        System.out.println(change(str, charA));
 
 
     }
