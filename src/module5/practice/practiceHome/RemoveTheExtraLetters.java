@@ -49,6 +49,4 @@ public class RemoveTheExtraLetters {
         }
         return newStr;
     }
-
-
 }
