@@ -1,4 +1,4 @@
-package module5.test;
+package independentWork.car;
 
 /**
  * Created by Andrey on 28.11.2016.
