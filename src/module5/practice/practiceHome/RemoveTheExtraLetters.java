@@ -2,6 +2,9 @@ package module5.practice.practiceHome;
 
 public class RemoveTheExtraLetters {
 
+    private RemoveTheExtraLetters() {
+    }
+
     public static String changeUseToCharArray(String str, char a) {
         String newStr = "";
         char[] chars = str.toCharArray();
