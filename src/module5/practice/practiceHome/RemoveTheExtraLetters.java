@@ -1,6 +1,6 @@
 package module5.practice.practiceHome;
 
-public class RemoveTheExtraLetters {
+public final class RemoveTheExtraLetters {
 
     private RemoveTheExtraLetters() {
     }
