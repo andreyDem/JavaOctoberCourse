@@ -6,7 +6,8 @@ public class Triangle extends View{
    public void show() {
         if (counter<1){
             System.out.println("Triangle show");
-        }
+        }else
+            System.out.println("Triangle cant shown");
     }
 
     @Override
@@ -14,6 +15,7 @@ public class Triangle extends View{
         if (counter==0) {
             System.out.println("Triangle hide");
             counter++;
-        }
+        }else
+            System.out.println("Nothing to hide");
     }
 }
