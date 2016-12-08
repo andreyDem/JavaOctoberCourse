@@ -2,6 +2,9 @@ package module7.homeWork;
 
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
 
 public class Main {
     public static void main(String[] args) {
@@ -29,6 +32,14 @@ public class Main {
         orderList.add(new Order(500, Currency.USD, "printer", "8767", tanya));
 
 
+
+//        for (Order order : ArraysUtilsList.sortDecrease(orderList)) {
+//            System.out.println(order);
+//        }
+
+        for (Order order : ArraysUtilsList.sortIncreaseAndCity(orderList)) {
+            System.out.println(order);
+        }
     }
 
 
