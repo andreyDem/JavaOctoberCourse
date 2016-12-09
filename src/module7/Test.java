@@ -5,11 +5,16 @@ import java.util.*;
 public class Test {
     public static void main(String[] args) {
 
-        Set<String> set = new HashSet<String>();
-        set.add("test");
-        set.add("test1");
-        set.add("test");
-        System.out.println(set.size());
+        ArrayList<String> list = new ArrayList<>();
+
+        list.add("1");
+        list.add("2");
+        list.add("3");
+        list.add("4");
+
+        list.add(1, "10");
+
+        System.out.println(list);
     }
 }
 
