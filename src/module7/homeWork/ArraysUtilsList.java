@@ -9,39 +9,48 @@ public class ArraysUtilsList {
     public ArraysUtilsList() {
     }
 
-    private static Comparator<Order> sortPrice = (Order a, Order b) -> {
-        Integer price1 = a.getPrice();
-        Integer price2 = b.getPrice();
-        return price1.compareTo(price2);
-    };
-
-    private static Comparator<Order> sortCity = (Order a, Order b) -> {
-        String city1 = a.getUser().getCity();
-        String city2 = b.getUser().getCity();
-        return city1.compareTo(city2);
-    };
-
     public static ArrayList<Order> sortDecrease(ArrayList<Order> orders) {
-        ArrayList<Order> orders2 = new ArrayList<>();
+        Comparator<Order> sortPrice = (Order a, Order b) -> {
+            Integer price1 = a.getPrice();
+            Integer price2 = b.getPrice();
+            return price2.compareTo(price1);
+        };
         Collections.sort(orders, sortPrice);
-        for (int i = orders.size() - 1; i >= 0; i--) {
-            orders2.add(orders.get(i));
-        }
-        return orders2;
+        return orders;
     }
 
     public static ArrayList<Order> sortIncreaseAndCity(ArrayList<Order> orders) {
-        Collections.sort(orders, sortPrice);
-        ArrayList<Order> arrays = new ArrayList<>();
-        for (int i = 0; i < orders.size(); i++) {
-            for (int j = i+1; j <orders.size() ; j++) {
-                if (orders.get(i).getPrice()==orders.get(j).getPrice()){
+        Comparator<Order> sortIncreaseAndCity = (Order a, Order b) -> {
+            Integer price1 = a.getPrice();
+            Integer price2 = b.getPrice();
+            String city1 = a.getUser().getCity();
+            String city2 = b.getUser().getCity();
+            if (price1.compareTo(price2) == 0) {
+                return city1.compareToIgnoreCase(city2);
+            } else
+                return price1.compareTo(price2);
+        };
+        Collections.sort(orders, sortIncreaseAndCity);
+        return orders;
+    }
 
-                }
-            }
-        }
-
-
+    public static ArrayList<Order> sortItemIdCity(ArrayList<Order> orders) {
+        Comparator<Order> sortItemIdCity = (Order a, Order b) -> {
+            String item1 = a.getItemName();
+            String item2 = b.getItemName();
+            String id1 = a.getShopIdentificator();
+            String id2 = b.getShopIdentificator();
+            String city1 = a.getUser().getCity();
+            String city2 = b.getUser().getCity();
+            if (item1.compareToIgnoreCase(item2) == 0) {
+                if (id1.compareToIgnoreCase(id2) == 0) {
+                    return city1.compareToIgnoreCase(city2);
+                } else
+                    return id1.compareToIgnoreCase(id2);
+            } else
+                return item1.compareToIgnoreCase(item2);
+        };
+        Collections.sort(orders, sortItemIdCity);
         return orders;
     }
 
