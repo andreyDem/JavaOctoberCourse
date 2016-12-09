@@ -2,9 +2,7 @@ package module7.homeWork;
 
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -19,7 +17,7 @@ public class Main {
         User tolik = new User(9, "Tolik", "Fedorov", "Cherkasu", 0);
         User tanya = new User(10, "Tanya", "Svetlova", "Symu", 500);
 
-        ArrayList<Order> orderList = new ArrayList<>();
+        List<Order> orderList = new ArrayList<>();
         orderList.add(new Order(10500, Currency.USD, "smartphone", "1", andrey));
         orderList.add(new Order(1000, Currency.UAH, "telephone", "4", vasya));
         orderList.add(new Order(2000, Currency.UAH, "sofa", "3", olga));
@@ -30,20 +28,25 @@ public class Main {
         orderList.add(new Order(3500, Currency.USD, "monitor", "10", sveta));
         orderList.add(new Order(100, Currency.UAH, "mouse", "12", tolik));
         orderList.add(new Order(500, Currency.USD, "printer", "13", tanya));
+        orderList.add(new Order(500, Currency.USD, "printer", "13", tanya));
 
 //        for (Order order : ArraysUtilsList.sortDecrease(orderList)) {
 //            System.out.println(order);
 //        }
-
 //        for (Order order : ArraysUtilsList.sortIncreaseAndCity(orderList)) {
 //            System.out.println(order);
 //        }
-
 //        for (Order order : ArraysUtilsList.sortItemIdCity(orderList)) {
 //            System.out.println(order);
 //        }
+//        for (Order order : ArraysUtilsList.deleteDuplicates(orderList)) {
+//            System.out.println(order);
+//        }
+//        for (Order order : ArraysUtilsList.priceLess(orderList)){
+//            System.out.println(order);
+//        }
 
-        
+
     }
 
 

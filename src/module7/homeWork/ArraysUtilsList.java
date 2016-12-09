@@ -1,15 +1,15 @@
 package module7.homeWork;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
 
 public class ArraysUtilsList {
     public ArraysUtilsList() {
     }
 
-    public static ArrayList<Order> sortDecrease(ArrayList<Order> orders) {
+    public static List<Order> sortDecrease(List<Order> orders) {
         Comparator<Order> sortPrice = (Order a, Order b) -> {
             Integer price1 = a.getPrice();
             Integer price2 = b.getPrice();
@@ -19,7 +19,7 @@ public class ArraysUtilsList {
         return orders;
     }
 
-    public static ArrayList<Order> sortIncreaseAndCity(ArrayList<Order> orders) {
+    public static List<Order> sortIncreaseAndCity(List<Order> orders) {
         Comparator<Order> sortIncreaseAndCity = (Order a, Order b) -> {
             Integer price1 = a.getPrice();
             Integer price2 = b.getPrice();
@@ -34,7 +34,7 @@ public class ArraysUtilsList {
         return orders;
     }
 
-    public static ArrayList<Order> sortItemIdCity(ArrayList<Order> orders) {
+    public static List<Order> sortItemIdCity(List<Order> orders) {
         Comparator<Order> sortItemIdCity = (Order a, Order b) -> {
             String item1 = a.getItemName();
             String item2 = b.getItemName();
@@ -54,8 +54,32 @@ public class ArraysUtilsList {
         return orders;
     }
 
-//    static ArrayList<Order> sortDecrease(ArrayList<Order> orders) {
-//        ArrayList<Order> newList = new ArrayList<>();
+    public static List<Order> deleteDuplicates(List<Order> orders) {
+        for (int i = 0; i < orders.size(); i++) {
+            for (int j = i + 1; j < orders.size(); j++) {
+                if (orders.get(i).equals(orders.get(j))) {
+                    orders.remove(j);
+                }
+            }
+        }
+        return orders;
+    }
+
+    public static List<Order> priceLess(List<Order> orders) {
+        for (int i = 0; i < orders.size(); i++) {
+            for (int j = i; j < orders.size(); j++) {
+                if (orders.get(j).getPrice() < 1500) {
+                    orders.remove(j);
+                }
+            }
+        }
+        return orders;
+    }
+
+//    public static List<Order>[] separeta
+
+//    static List<Order> sortDecrease(ArrayList<Order> orders) {
+//        List<Order> newList = new ArrayList<>();
 //        int[] arr = new int[orders.size()];
 //        for (int i = 0; i < orders.size(); i++) {
 //            arr[i] = orders.get(i).getPrice();
