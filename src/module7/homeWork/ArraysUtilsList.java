@@ -1,9 +1,7 @@
 package module7.homeWork;
 
 
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class ArraysUtilsList {
     public ArraysUtilsList() {
@@ -76,9 +74,74 @@ public class ArraysUtilsList {
         return orders;
     }
 
-//    public static List<Order>[] separeta
+    public static List<Order>[] separateUSDandUAH(List<Order> orders) {
+        List<Order>[] allOrders = new ArrayList[2];
+        List<Order> usdOrders = new ArrayList<>();
+        List<Order> uahOrders = new ArrayList<>();
+        allOrders[0] = usdOrders;
+        allOrders[1] = uahOrders;
+        for (int i = 0; i < orders.size(); i++) {
+            if (orders.get(i).getCurrency().equals(Currency.USD)) {
+                usdOrders.add(orders.get(i));
+            }
+            if (orders.get(i).getCurrency().equals(Currency.UAH)) {
+                uahOrders.add(orders.get(i));
+            }
+        }
+        return allOrders;
+    }
 
-//    static List<Order> sortDecrease(ArrayList<Order> orders) {
+    public static List<Order>[] uniqueCities(List<Order> orders) {
+        List<Order>[] allCity = new ArrayList[orders.size()];
+        int counter = 0;
+//        List<String> cities = new ArrayList<>();
+//        for (int i = 0; i < orders.size(); i++) {
+//            Order order = orders.get(i);
+//            for (String city : cities) {
+//                if (city.equals(order.getUser().getCity())) {
+//                    break;
+//                }
+//            }
+//
+//            cities.add(order.getUser().getCity());
+//        }
+
+        do {
+            allCity[counter] = new ArrayList<>();
+            allCity[counter].add(orders.get(0));
+            for (int i = 1; i < orders.size(); i++) {
+                if (allCity[counter].get(0).getUser().getCity().equals(orders.get(i).getUser().getCity())) {
+                    allCity[counter].add(orders.get(i));
+                }
+            }
+            for (int i = 0; i < allCity[counter].size(); i++) {
+                for (int j = 0; j < orders.size(); j++) {
+                    if (allCity[counter].get(i).equals(orders.get(j))) {
+                        orders.remove(j);
+                    }
+                }
+            }
+            counter++;
+        } while (orders.size() > 0);
+        counter = 0;
+        for (int i = 0; i < allCity.length; i++) {
+            if (allCity[i] != null){
+                counter++;
+            }
+        }
+        List<Order>[] uniqueCity = new ArrayList[counter];
+        counter = 0;
+        for (int i = 0; i < allCity.length; i++) {
+            if (allCity[i] !=null){
+                uniqueCity[counter] = allCity[i];
+                counter++;
+            }
+        }
+        return uniqueCity;
+    }
+
+
+//    static List<Order> sortDecrease(List<Order> orders) {
 //        List<Order> newList = new ArrayList<>();
 //        int[] arr = new int[orders.size()];
 //        for (int i = 0; i < orders.size(); i++) {

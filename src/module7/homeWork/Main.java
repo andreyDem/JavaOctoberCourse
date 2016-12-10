@@ -2,6 +2,7 @@ package module7.homeWork;
 
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Main {
@@ -45,8 +46,13 @@ public class Main {
 //        for (Order order : ArraysUtilsList.priceLess(orderList)){
 //            System.out.println(order);
 //        }
-
-
+//        List<Order>[] separateUsdAndUah = ArraysUtilsList.separateUSDandUAH(orderList);
+//        for (List<Order> list : separateUsdAndUah) {
+//            System.out.println(list);
+//        }
+        for (List<Order> list : ArraysUtilsList.uniqueCities(orderList)) {
+            System.out.println(list);
+        }
     }
 
 
