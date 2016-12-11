@@ -39,10 +39,14 @@ public class MainTree {
         orderTree.add(new Order(500, Currency.USD, "printer", "13", tanya));
         orderTree.add(new Order(500, Currency.USD, "printer", "13", tanya));
 
-        for (Order order : orderTree) {
-            System.out.println(order);
-        }
+//        for (Order order : orderTree) {
+//            System.out.println(order);
+//        }
 
 //        TreeUtils.isPetrovHere(orderTree);
+
+//        TreeUtils.maxValuePrice(orderTree);
+
+        TreeUtils.removeUSD(orderTree);
     }
 }
