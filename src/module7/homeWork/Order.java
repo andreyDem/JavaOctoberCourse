@@ -3,13 +3,15 @@ package module7.homeWork;
 import java.util.Objects;
 
 public class Order {
+    private long id;
     private int price;
     private Currency currency;
     private String itemName;
     private String shopIdentificator;
     private User user;
 
-    public Order(int price, Currency currency, String itemName, String shopIdentificator, User user) {
+    public Order(long id, int price, Currency currency, String itemName, String shopIdentificator, User user) {
+        this.id = id;
         this.price = price;
         this.currency = currency;
         this.itemName = itemName;
@@ -61,7 +63,8 @@ public class Order {
     @Override
     public String toString() {
         return "Order{" +
-                "price=" + price +
+                "id=" + id +
+                ", price=" + price +
                 ", currency=" + currency +
                 ", itemName='" + itemName + '\'' +
                 ", shopIdentificator='" + shopIdentificator + '\'' +
@@ -74,7 +77,8 @@ public class Order {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Order order = (Order) o;
-        return price == order.price &&
+        return id == order.id &&
+                price == order.price &&
                 currency == order.currency &&
                 Objects.equals(itemName, order.itemName) &&
                 Objects.equals(shopIdentificator, order.shopIdentificator) &&
@@ -83,6 +87,6 @@ public class Order {
 
     @Override
     public int hashCode() {
-        return Objects.hash(price, currency, itemName, shopIdentificator, user);
+        return Objects.hash(id, price, currency, itemName, shopIdentificator, user);
     }
 }

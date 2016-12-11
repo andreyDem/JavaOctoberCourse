@@ -28,16 +28,16 @@ public class MainTree {
                 else return -1;
             }
         });
-        orderTree.add(new Order(10500, Currency.USD, "smartphone", "1", andrey));
-        orderTree.add(new Order(1000, Currency.UAH, "telephone", "4", vasya));
-        orderTree.add(new Order(2000, Currency.USD, "sofa", "3", olga));
-        orderTree.add(new Order(3000, Currency.UAH, "PC", "5", vika));
-        orderTree.add(new Order(4000, Currency.USD, "table", "2", stepan));
-        orderTree.add(new Order(5000, Currency.UAH, "netbook", "9", petr));
-        orderTree.add(new Order(2000, Currency.UAH, "TV", "11", lena));
-        orderTree.add(new Order(3500, Currency.USD, "monitor", "10", sveta));
-        orderTree.add(new Order(500, Currency.USD, "printer", "13", tanya));
-        orderTree.add(new Order(500, Currency.USD, "printer", "13", tanya));
+        orderTree.add(new Order(1, 10500, Currency.USD, "smartphone", "1", andrey));
+        orderTree.add(new Order(2, 1000, Currency.UAH, "telephone", "4", vasya));
+        orderTree.add(new Order(3, 2000, Currency.USD, "sofa", "3", olga));
+        orderTree.add(new Order(4, 3000, Currency.UAH, "PC", "5", vika));
+        orderTree.add(new Order(5, 4000, Currency.USD, "table", "2", stepan));
+        orderTree.add(new Order(6, 5000, Currency.UAH, "netbook", "9", petr));
+        orderTree.add(new Order(7, 2000, Currency.UAH, "TV", "11", lena));
+        orderTree.add(new Order(8, 3500, Currency.USD, "monitor", "10", sveta));
+        orderTree.add(new Order(9, 500, Currency.USD, "printer", "13", tanya));
+        orderTree.add(new Order(10, 500, Currency.USD, "printer", "13", tanya));
 
 //        for (Order order : orderTree) {
 //            System.out.println(order);
