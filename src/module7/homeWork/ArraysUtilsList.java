@@ -94,18 +94,6 @@ public class ArraysUtilsList {
     public static List<Order>[] uniqueCities(List<Order> orders) {
         List<Order>[] allCity = new ArrayList[orders.size()];
         int counter = 0;
-//        List<String> cities = new ArrayList<>();
-//        for (int i = 0; i < orders.size(); i++) {
-//            Order order = orders.get(i);
-//            for (String city : cities) {
-//                if (city.equals(order.getUser().getCity())) {
-//                    break;
-//                }
-//            }
-//
-//            cities.add(order.getUser().getCity());
-//        }
-
         do {
             allCity[counter] = new ArrayList<>();
             allCity[counter].add(orders.get(0));
@@ -123,17 +111,21 @@ public class ArraysUtilsList {
             }
             counter++;
         } while (orders.size() > 0);
-        counter = 0;
-        for (int i = 0; i < allCity.length; i++) {
-            if (allCity[i] != null){
+        return checkNull(allCity);
+    }
+
+    private static List<Order>[] checkNull(List<Order>[] orders) {
+        int counter = 0;
+        for (int i = 0; i < orders.length; i++) {
+            if (orders[i] != null) {
                 counter++;
             }
         }
         List<Order>[] uniqueCity = new ArrayList[counter];
         counter = 0;
-        for (int i = 0; i < allCity.length; i++) {
-            if (allCity[i] !=null){
-                uniqueCity[counter] = allCity[i];
+        for (int i = 0; i < orders.length; i++) {
+            if (orders[i] != null) {
+                uniqueCity[counter] = orders[i];
                 counter++;
             }
         }
