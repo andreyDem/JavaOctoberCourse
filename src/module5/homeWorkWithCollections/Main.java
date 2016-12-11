@@ -16,9 +16,9 @@ public class Main {
         API booking = new BookingComAPI();
         API google = new GoogleAPI();
         API tripAdvisor = new TripAdvisorAPI();
-        Room[] roomsSame = controller.check(booking, google);
-        Room[] roomsSame2 = controller.check(google, tripAdvisor);
-        Room[] roomsSame3 = controller.check(tripAdvisor, booking);
+//        Room[] roomsSame = controller.check(booking, google);
+//        Room[] roomsSame2 = controller.check(google, tripAdvisor);
+//        Room[] roomsSame3 = controller.check(tripAdvisor, booking);
 
     }
 }

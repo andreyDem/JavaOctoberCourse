@@ -14,6 +14,7 @@ public class ArraysUtilsList {
             return price2.compareTo(price1);
         };
         Collections.sort(orders, sortPrice);
+        System.out.println("Sort list by Order price in decrease order");
         return orders;
     }
 
@@ -29,6 +30,7 @@ public class ArraysUtilsList {
                 return price1.compareTo(price2);
         };
         Collections.sort(orders, sortIncreaseAndCity);
+        System.out.println("Sort list by Order price in increase order AND User city");
         return orders;
     }
 
@@ -49,6 +51,7 @@ public class ArraysUtilsList {
                 return item1.compareToIgnoreCase(item2);
         };
         Collections.sort(orders, sortItemIdCity);
+        System.out.println("Sort list by Order itemName AND ShopIdentificator AND User city");
         return orders;
     }
 
@@ -60,6 +63,7 @@ public class ArraysUtilsList {
                 }
             }
         }
+        System.out.println("Delete duplicates from the list");
         return orders;
     }
 
@@ -71,6 +75,7 @@ public class ArraysUtilsList {
                 }
             }
         }
+        System.out.println("Delete items where price less than 1500");
         return orders;
     }
 
@@ -88,6 +93,7 @@ public class ArraysUtilsList {
                 uahOrders.add(orders.get(i));
             }
         }
+        System.out.println("Separate list for two list - orders in USD and UAH");
         return allOrders;
     }
 
@@ -111,9 +117,11 @@ public class ArraysUtilsList {
             }
             counter++;
         } while (orders.size() > 0);
+        System.out.println("Separate list for as many lists as many unique cities are in User");
         return checkNull(allCity);
     }
 
+    //a helper method
     private static List<Order>[] checkNull(List<Order>[] orders) {
         int counter = 0;
         for (int i = 0; i < orders.length; i++) {
@@ -132,22 +140,22 @@ public class ArraysUtilsList {
         return uniqueCity;
     }
 
-
-//    static List<Order> sortDecrease(List<Order> orders) {
-//        List<Order> newList = new ArrayList<>();
-//        int[] arr = new int[orders.size()];
-//        for (int i = 0; i < orders.size(); i++) {
-//            arr[i] = orders.get(i).getPrice();
-//        }
-//        Arrays.sort(arr);
-//        for (int i = arr.length-1; i >= 0; i--) {
-//            for (int j = 0; j < orders.size(); j++) {
-//                if (arr[i] == orders.get(j).getPrice()) {
-//                    newList.add(orders.get(j));
-//                    orders.remove(j);
-//                }
-//            }
-//        }
-//        return newList;
-//    }
+    //works by use arrays to sort list
+    static List<Order> sortDecreaseWithArrays(List<Order> orders) {
+        List<Order> newList = new ArrayList<>();
+        int[] arr = new int[orders.size()];
+        for (int i = 0; i < orders.size(); i++) {
+            arr[i] = orders.get(i).getPrice();
+        }
+        Arrays.sort(arr);
+        for (int i = arr.length-1; i >= 0; i--) {
+            for (int j = 0; j < orders.size(); j++) {
+                if (arr[i] == orders.get(j).getPrice()) {
+                    newList.add(orders.get(j));
+                    orders.remove(j);
+                }
+            }
+        }
+        return newList;
+    }
 }

@@ -31,25 +31,31 @@ public class MainList {
         orderList.add(new Order(10, 500, Currency.USD, "printer", "13", tanya));
         orderList.add(new Order(11, 500, Currency.USD, "printer", "13", tanya));
 
-//        for (Order order : ArraysUtilsList.sortDecrease(orderList)) {
-//            System.out.println(order);
-//        }
-//        for (Order order : ArraysUtilsList.sortIncreaseAndCity(orderList)) {
-//            System.out.println(order);
-//        }
-//        for (Order order : ArraysUtilsList.sortItemIdCity(orderList)) {
-//            System.out.println(order);
-//        }
-//        for (Order order : ArraysUtilsList.deleteDuplicates(orderList)) {
-//            System.out.println(order);
-//        }
-//        for (Order order : ArraysUtilsList.priceLess(orderList)){
-//            System.out.println(order);
-//        }
-//        List<Order>[] separateUsdAndUah = ArraysUtilsList.separateUSDandUAH(orderList);
-//        for (List<Order> list : separateUsdAndUah) {
-//            System.out.println(list);
-//        }
+        for (Order order : ArraysUtilsList.sortDecrease(orderList)) {
+            System.out.println(order);
+        }
+        System.out.println();
+        for (Order order : ArraysUtilsList.sortIncreaseAndCity(orderList)) {
+            System.out.println(order);
+        }
+        System.out.println();
+        for (Order order : ArraysUtilsList.sortItemIdCity(orderList)) {
+            System.out.println(order);
+        }
+        System.out.println();
+        for (Order order : ArraysUtilsList.deleteDuplicates(orderList)) {
+            System.out.println(order);
+        }
+        System.out.println();
+        for (Order order : ArraysUtilsList.priceLess(orderList)){
+            System.out.println(order);
+        }
+        System.out.println();
+        List<Order>[] separateUsdAndUah = ArraysUtilsList.separateUSDandUAH(orderList);
+        for (List<Order> list : separateUsdAndUah) {
+            System.out.println(list);
+        }
+        System.out.println();
         for (List<Order> list : ArraysUtilsList.uniqueCities(orderList)) {
             System.out.println(list);
         }
