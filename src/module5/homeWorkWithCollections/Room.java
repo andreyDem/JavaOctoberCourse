@@ -1,15 +1,15 @@
-package module5.findRoomsHotelTest;
+package module5.homeWorkWithCollections;
 
 import java.util.Date;
 import java.util.Objects;
 
 public class Room {
-    long id;
-    int price;
-    int persons;
-    Date dateAvailableFrom;
-    String hotelName;
-    String cityName;
+    private long id;
+    private int price;
+    private int persons;
+    private Date dateAvailableFrom;
+    private String hotelName;
+    private String cityName;
 
     public Room(long id, int price, int persons, Date dateAvailableFrom, String hotelName, String cityName) {
         this.id = id;
@@ -25,14 +25,18 @@ public class Room {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Room room = (Room) o;
-        return price == room.price &&
+        return
+                price == room.price &&
                 persons == room.persons &&
                 Objects.equals(cityName, room.cityName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(price, persons, cityName);
+        int result = price;
+        result = 31 * result + persons;
+        result = 31 * result + cityName.hashCode();
+        return result;
     }
 
     public long getId() {
