@@ -47,20 +47,20 @@ public class Controller {
         return result;
     }
 
-    Room[] check(API api1, API api2) {
-        Room[] roomApi1 = api1.getAll();
-        Room[] roomApi2 = api2.getAll();
-        Room[] checkedRooms = new Room[10];
-        for (int i = 0; i < roomApi1.length; i++) {
-            for (int j = 0; j < roomApi2.length; j++) {
-                if (roomApi1[i].equals(roomApi2[j])) {
-                    checkedRooms[i] = roomApi1[i];
-                    System.out.println("The same rooms in " + checkedRooms[i].getHotelName() + " in " + checkedRooms[i].getCityName() + " city.");
-                }
-            }
-        }
-        return recreateArray(checkedRooms);
-    }
+//    Room[] check(API api1, API api2) {
+//        Room[] roomApi1 = api1.getAll();
+//        Room[] roomApi2 = api2.getAll();
+//        Room[] checkedRooms = new Room[10];
+//        for (int i = 0; i < roomApi1.length; i++) {
+//            for (int j = 0; j < roomApi2.length; j++) {
+//                if (roomApi1[i].equals(roomApi2[j])) {
+//                    checkedRooms[i] = roomApi1[i];
+//                    System.out.println("The same rooms in " + checkedRooms[i].getHotelName() + " in " + checkedRooms[i].getCityName() + " city.");
+//                }
+//            }
+//        }
+//        return recreateArray(checkedRooms);
+//    }
 
 
 }

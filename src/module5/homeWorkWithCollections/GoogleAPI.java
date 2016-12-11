@@ -1,21 +1,18 @@
 package module5.homeWorkWithCollections;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class GoogleAPI implements API{
-    Room[] rooms= new Room[5];
+    List<Room> google = new ArrayList<>();
 
     public GoogleAPI() {
-        Room roomSngl = new Room(15, 160, 4, new Date(), "Amira", "Poltava");
-        rooms[0] = roomSngl;
-        Room roomDbl = new Room(14, 350, 3, new Date(), "Undor", "Kharkiv");
-        rooms[1] = roomDbl;
-        Room roomTwn = new Room(13, 580, 3, new Date(), "MaxHotel", "Florida");//the same with Booking
-        rooms[2] = roomTwn;
-        Room roomLux = new Room(12, 1300, 5, new Date(), "ParkInn", "Kiev");// the same with TripAdvisor
-        rooms[3] = roomLux;
-        Room roomLuxery = new Room(11, 2100, 3, new Date(), "Hilton", "Kiev");
-        rooms[4] = roomLuxery;
+        google.add(new Room(15, 160, 4, new Date(), "Amira", "Poltava"));
+        google.add(new Room(14, 350, 3, new Date(), "Undor", "Kharkiv"));
+        google.add(new Room(13, 580, 3, new Date(), "MaxHotel", "Florida"));
+        google.add(new Room(12, 1300, 5, new Date(), "ParkInn", "Kiev"));
+        google.add(new Room(11, 2100, 3, new Date(), "Hilton", "Kiev"));
     }
 
     @Override
@@ -23,7 +20,7 @@ public class GoogleAPI implements API{
         Room[] founded = new Room[5];
         Room request = new Room(0, price, persons, new Date(), hotel, city);
         int index = 0;
-        for (Room room : rooms) {
+        for (Room room : google) {
             if (hotel == null) {
                 if (room.equals(request)) {
                     founded[index] = room;
@@ -42,8 +39,8 @@ public class GoogleAPI implements API{
     }
 
     @Override
-    public Room[] getAll() {
-        return rooms;
+    public List<Room> getAll() {
+        return google;
     }
 
 
