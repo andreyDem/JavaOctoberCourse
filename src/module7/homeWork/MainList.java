@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Main {
+public class MainList {
     public static void main(String[] args) {
         User andrey = new User(1, "Andrey", "Demchuk", "Kiev", 50000);
         User vasya = new User(2, "Vasya", "Petrov", "Odessa", 1000);
