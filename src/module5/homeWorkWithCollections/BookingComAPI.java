@@ -1,22 +1,19 @@
 package module5.homeWorkWithCollections;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class BookingComAPI implements API {
 
-    Room[] rooms = new Room[5];
+    List<Room> booking = new ArrayList<>();
 
     public BookingComAPI() {
-        Room roomSngl = new Room(5, 500, 1, new Date(), "ParkInn", "NY");
-        rooms[0] = roomSngl;
-        Room roomDbl = new Room(4, 500, 1, new Date(), "Hilton", "Chicago");
-        rooms[1] = roomDbl;
-        Room roomTwn = new Room(3, 580, 3, new Date(), "MaxHotel", "Florida"); // the same with Google
-        rooms[2] = roomTwn;
-        Room roomLux = new Room(2, 800, 5, new Date(), "Houston", "Washington");
-        rooms[3] = roomLux;
-        Room roomLuxery = new Room(1, 1100, 2, new Date(), "MaxHotel", "Amsterdam");// the same with TripAdvisor
-        rooms[4] = roomLuxery;
+        booking.add(new Room(5, 500, 1, new Date(), "ParkInn", "NY"));
+        booking.add(new Room(4, 500, 1, new Date(), "Hilton", "Chicago"));
+        booking.add(new Room(3, 580, 3, new Date(), "MaxHotel", "Florida"));
+        booking.add(new Room(2, 800, 5, new Date(), "Houston", "Washington"));
+        booking.add(new Room(1, 1100, 2, new Date(), "MaxHotel", "Amsterdam"));
     }
 
     @Override
@@ -24,7 +21,7 @@ public class BookingComAPI implements API {
         Room[] founded = new Room[5];
         Room request = new Room(0, price, persons, new Date(), hotel, city);
         int index = 0;
-        for (Room room : rooms) {
+        for (Room room : booking) {
             if (hotel == null) {
                 if (room.equals(request)) {
                     founded[index] = room;
@@ -43,8 +40,8 @@ public class BookingComAPI implements API {
     }
 
     @Override
-    public Room[] getAll() {
-        return rooms;
+    public List<Room> getAll() {
+        return booking;
     }
 
 
