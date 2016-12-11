@@ -34,6 +34,7 @@ public class TreeUtils {
     }
 
     public static void removeUSD(Set<Order> orders){
+        System.out.println("Remove usd from list");
         Iterator<Order> iterator = orders.iterator();
         while (iterator.hasNext()){
             if (iterator.next().getCurrency().equals(Currency.USD)){
@@ -43,6 +44,7 @@ public class TreeUtils {
         for (Order order : orders) {
             System.out.println(order);
         }
+
     }
 
 }
