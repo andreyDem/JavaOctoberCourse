@@ -1,53 +1,59 @@
 package module5.homeWorkWithCollections;
 
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Controller {
 
-    API[] apisArray = new API[3];
+    List<API> apisArray = new ArrayList<>();
+    DAO daoSave = new DAOimpl();
 
     public Controller() {
-        BookingComAPI bookingComAPI = new BookingComAPI();
-        apisArray[0] = bookingComAPI;
-        GoogleAPI googleAPI = new GoogleAPI();
-        apisArray[1] = googleAPI;
-        TripAdvisorAPI tripAdvisorAPI = new TripAdvisorAPI();
-        apisArray[2] = tripAdvisorAPI;
+        apisArray.add(new BookingComAPI());
+        apisArray.add(new GoogleAPI());
+        apisArray.add(new TripAdvisorAPI());
     }
 
-    public Controller(API[] apisArray) {
-        this.apisArray = apisArray;
-    }
 
-    public Room[] recreateArray(Room[] rooms) {
-        int k = 0;
-        for (Room room : rooms) {
-            if (room != null) k++;
-        }
-        Room[] roomsArray = new Room[k];
-        for (int i = 0; i < k; i++) {
-            roomsArray[i] = rooms[i];
-        }
-        return roomsArray;
-    }
+//    public Room[] recreateArray(Room[] rooms) {
+//        int k = 0;
+//        for (Room room : rooms) {
+//            if (room != null) k++;
+//        }
+//        Room[] roomsArray = new Room[k];
+//        for (int i = 0; i < k; i++) {
+//            roomsArray[i] = rooms[i];
+//        }
+//        return roomsArray;
+//    }
 
-    Room[] requestRooms(int price, int persons, String city, String hotel) {
-        Room[] result = new Room[15];
-        DAO daoSave = new DAOimpl();
-        int index = 0;
-        for (int i = 0; i < 3; i++) {
-            Room[] findRoom = recreateArray(apisArray[i].findRooms(price, persons, city, hotel));
+    List<Room> requestRooms(int price, int persons, String city, String hotel) {
+//        Room[] result = new Room[15];
+
+//        int index = 0;
+//        for (int i = 0; i < 3; i++) {
+//            Room[] findRoom = recreateArray(apisArray[i].findRooms(price, persons, city, hotel));
+//            for (Room room : findRoom) {
+//                result[index] = room;
+//                daoSave.save(result[index]);
+//                index++;
+//            }
+//        }
+//        return result;
+        List<Room> result = new  ArrayList<>();
+        for (API api : apisArray) {
+            List<Room> findRoom = api.findRooms(price, persons, city, hotel);
             for (Room room : findRoom) {
-                result[index] = room;
-                daoSave.save(result[index]);
-                index++;
+                result.add(room);
+                daoSave.save(room);
             }
         }
         return result;
     }
 
-//    Room[] check(API api1, API api2) {
+    List<Room> check(API api1, API api2) {
 //        Room[] roomApi1 = api1.getAll();
 //        Room[] roomApi2 = api2.getAll();
 //        Room[] checkedRooms = new Room[10];
@@ -60,7 +66,21 @@ public class Controller {
 //            }
 //        }
 //        return recreateArray(checkedRooms);
-//    }
+
+        List<Room> checkedRooms = new ArrayList<>();
+
+        List<Room> roomApi1 = api1.getAll();
+        List<Room> roomApi2 = api2.getAll();
+        for (int i = 0; i < roomApi1.size(); i++) {
+            for (int j = 0; j < roomApi2.size(); j++) {
+                if (roomApi1.get(i).equals(roomApi2.get(j))) {
+                    checkedRooms.add(roomApi1.get(i));
+                    System.out.println("The same rooms in " + checkedRooms.get(i).getHotelName() + " in " + checkedRooms.get(i).getCityName() + " city.");
+                }
+            }
+        }
+        return checkedRooms;
+    }
 
 
 }

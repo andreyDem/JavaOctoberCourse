@@ -1,5 +1,7 @@
 package module5.homeWorkWithCollections;
 
+import java.util.List;
+
 public interface DAO {
 
     Room save(Room room);

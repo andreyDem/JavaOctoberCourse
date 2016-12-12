@@ -16,23 +16,35 @@ public class TripAdvisorAPI implements API{
     }
 
     @Override
-    public Room[] findRooms(int price, int persons, String city, String hotel) {
-        Room[] founded = new Room[5];
-        Room request = new Room(0, price, persons, new Date(), hotel, city);
-        int index = 0;
-        for (Room room : trip) {
-            if (hotel == null) {
-                if (room.equals(request)) {
-                    founded[index] = room;
-                    System.out.println(founded[index]);
-                    index++;
-                }
-            } else {
-                if (room.equals(request) && hotel == room.getHotelName()) {
-                    founded[index] = room;
-                    System.out.println(founded[index]);
-                    index++;
-                }
+//    public List<Room> findRooms(int price, int persons, String city, String hotel) {
+//        Room[] founded = new Room[5];
+//        Room request = new Room(0, price, persons, new Date(), hotel, city);
+//        int index = 0;
+//        for (Room room : trip) {
+//            if (hotel == null) {
+//                if (room.equals(request)) {
+//                    founded[index] = room;
+//                    System.out.println(founded[index]);
+//                    index++;
+//                }
+//            } else {
+//                if (room.equals(request) && hotel == room.getHotelName()) {
+//                    founded[index] = room;
+//                    System.out.println(founded[index]);
+//                    index++;
+//                }
+//            }
+//        }
+//        return founded;
+//    }
+    public List<Room> findRooms(int price, int persons, String city, String hotel) {
+        List<Room> founded = new ArrayList<>();
+        for (Room room : getAll()) {
+            if (room.getPrice() == price
+                    && room.getPersons() == persons
+                    && room.getCityName().equals(city)
+                    && room.getHotelName().equals(hotel)) {
+                founded.add(room);
             }
         }
         return founded;
