@@ -13,19 +13,6 @@ public class User{
         this.age = age;
     }
 
-    public static void main(String[] args) {
-        List<User> users = new ArrayList<>();
-        Random random = new Random();
-        for (int i = 0; i < 100; i++) {
-            users.add(new User(random.nextInt(1000) + "", random.nextInt(1000) + "", random.nextInt(1000)));
-        }
-        UserComparator userComparator = new UserComparator();
-        Collections.sort(users, userComparator);
-        for (User user : users) {
-            System.out.println(user);
-        }
-    }
-
     @Override
     public String toString() {
         return "User{" +
