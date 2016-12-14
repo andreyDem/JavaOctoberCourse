@@ -1,8 +1,7 @@
 package module7.practice;
 
-import java.util.*;
 
-public class User{
+public class User implements Comparable<User> {
     private String name;
     private String lastName;
     private Integer age;
@@ -44,6 +43,11 @@ public class User{
 
     public void setAge(Integer age) {
         this.age = age;
+    }
+
+    @Override
+    public int compareTo(User o) {
+        return o.getAge() - age;
     }
 }
 
