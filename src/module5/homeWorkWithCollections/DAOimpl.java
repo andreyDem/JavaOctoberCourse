@@ -1,9 +1,9 @@
 package module5.homeWorkWithCollections;
 
 import java.util.Date;
+import java.util.List;
 
 public class DAOimpl implements DAO {
-
 
     @Override
     public Room save(Room room) {
@@ -31,7 +31,7 @@ public class DAOimpl implements DAO {
     }
 
     @Override
-    public Room[] getAll() {
+    public List<Room> getAll() {
         return null;
     }
 

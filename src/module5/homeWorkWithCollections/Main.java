@@ -1,11 +1,9 @@
 package module5.homeWorkWithCollections;
 
-import java.util.Arrays;
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-
         Controller controller = new Controller();
         List<Room> roomsOne = controller.requestRooms(800, 5, "Washington", "Houston");
         System.out.println("________________");
@@ -20,6 +18,5 @@ public class Main {
         List<Room> roomsSame = controller.check(booking, google);
         List<Room> roomsSame2 = controller.check(google, tripAdvisor);
         List<Room> roomsSame3 = controller.check(tripAdvisor, booking);
-
     }
 }
