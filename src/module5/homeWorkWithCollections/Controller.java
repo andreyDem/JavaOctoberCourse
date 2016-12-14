@@ -8,7 +8,7 @@ import java.util.List;
 public class Controller {
 
     List<API> apisArray = new ArrayList<>();
-    DAO daoSave = new DAOimpl();
+
 
     public Controller() {
         apisArray.add(new BookingComAPI());
@@ -43,6 +43,7 @@ public class Controller {
 //        }
 //        return result;
         List<Room> result = new  ArrayList<>();
+        DAO daoSave = new DAOimpl();
         for (API api : apisArray) {
             List<Room> findRoom = api.findRooms(price, persons, city, hotel);
             for (Room room : findRoom) {
@@ -75,7 +76,7 @@ public class Controller {
             for (int j = 0; j < roomApi2.size(); j++) {
                 if (roomApi1.get(i).equals(roomApi2.get(j))) {
                     checkedRooms.add(roomApi1.get(i));
-                    System.out.println("The same rooms in " + checkedRooms.get(i).getHotelName() + " in " + checkedRooms.get(i).getCityName() + " city.");
+                    System.out.println("The same rooms in " + roomApi1.get(i).getHotelName() + " in " + roomApi1.get(i).getCityName() + " city.");
                 }
             }
         }

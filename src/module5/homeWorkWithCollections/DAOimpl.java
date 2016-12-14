@@ -7,7 +7,7 @@ public class DAOimpl implements DAO {
 
     @Override
     public Room save(Room room) {
-        System.out.println(room.toString() + " saved succesfull");
+        System.out.println(room + " saved succesfull");
         return room;
     }
 
@@ -32,7 +32,7 @@ public class DAOimpl implements DAO {
 
     @Override
     public Room[] getAll() {
-        return new Room[0];
+        return null;
     }
 
 

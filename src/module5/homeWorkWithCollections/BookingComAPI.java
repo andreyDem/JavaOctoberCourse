@@ -20,11 +20,21 @@ public class BookingComAPI implements API {
     public List<Room> findRooms(int price, int persons, String city, String hotel) {
         List<Room> founded = new ArrayList<>();
         for (Room room : getAll()) {
-            if (room.getPrice() == price
-                    && room.getPersons() == persons
-                    && room.getCityName().equals(city)
-                    && room.getHotelName().equals(hotel)) {
-                founded.add(room);
+            if (hotel==null){
+                if (room.getPrice() == price
+                        && room.getPersons() == persons
+                        && room.getCityName().equals(city)){
+                    founded.add(room);
+                    System.out.println(room);
+                }
+            }else{
+                if  (room.getPrice() == price
+                        && room.getPersons() == persons
+                        && room.getCityName().equals(city)
+                        && room.getHotelName().equals(hotel)){
+                    founded.add(room);
+                    System.out.println(room);
+                }
             }
         }
         return founded;
