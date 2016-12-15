@@ -61,7 +61,7 @@ public class Calculator {
             result = result * a;
             counter--;
         } while (counter != 1);
-        System.out.println(a + " to power " + b + "= " + result);
+        System.out.println(a + " powered by " + b + "= " + result);
         return result;
     }
 
