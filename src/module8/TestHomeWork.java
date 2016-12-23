@@ -1,6 +1,7 @@
 package module8;
 
 
+import module8.homeWork.AbstractDAO;
 import module8.homeWork.User;
 import module8.homeWork.UserDAO;
 
@@ -21,7 +22,7 @@ public class TestHomeWork {
         userList.add(user4);
         User user5 = new User(5, "Gleb");
 
-        UserDAO userDAO1 = new UserDAO();
+        AbstractDAO userDAO1 = new UserDAO();
         userDAO1.saveAll(userList);
         userDAO1.getList();
         System.out.println("---------------------------------------------------------------------------------------");
