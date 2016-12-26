@@ -8,6 +8,8 @@ public abstract class Shape {
       this.point = point;
     }
 
+    public abstract double getArea();
+
     @Override
     public String toString() {
         return "Shape{" +

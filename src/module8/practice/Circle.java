@@ -9,6 +9,11 @@ public class Circle extends Shape {
     }
 
     @Override
+    public double getArea() {
+        return Math.PI * Math.pow(radius, 2);
+    }
+
+    @Override
     public String toString() {
         return "Circle{" +
                 super.toString() +

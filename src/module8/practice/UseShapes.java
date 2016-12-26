@@ -21,5 +21,7 @@ public class UseShapes {
         for (Shape shape : all) {
             System.out.println(shape);
         }
+
+        System.out.println("Area = " + group.getSumArea());
     }
 }
