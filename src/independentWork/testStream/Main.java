@@ -26,6 +26,7 @@ public class Main {
 
         peoples.stream().filter((p) -> p.getAge() >= 18).filter(
                 (p) -> (p.getSex() == Sex.WOMEN && p.getAge() < 55)
-                        || (p.getSex() == Sex.MAN && p.getAge() < 60)).count();
+                        || (p.getSex() == Sex.MAN && p.getAge() < 60))
+                .forEach(s-> System.out.println(s));    //.count()
     }
 }
