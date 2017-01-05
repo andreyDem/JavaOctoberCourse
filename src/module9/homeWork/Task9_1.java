@@ -56,6 +56,7 @@ public class Task9_1 {
     }
 
     private static void removeUSD(List<Order> orders) {
+        System.out.println("Remove USD from list");
         orders.removeIf(s -> s.getCurrency() == Currency.USD);
         orders.forEach(s -> System.out.println(s));
     }
