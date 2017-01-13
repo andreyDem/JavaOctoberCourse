@@ -1,6 +1,6 @@
 package module10.practice;
 
-public class Task {
+public class Task1 {
     public static void main(String[] args) {
         Integer a =20;
         Number b =10;
@@ -26,7 +26,13 @@ public class Task {
             System.out.println("catch " + e);
         }
 
-        
+        try {
+            Integer result = Integer.valueOf("Some");
+        } catch (NumberFormatException e) {
+            System.out.println("catch " + e);
+        } finally {
+            System.out.println("Finally....");
+        }
 
     }
 }
