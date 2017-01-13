@@ -21,13 +21,13 @@ public class Main {
             Task10_2 one = null;
             one.printString();
         }catch (NullPointerException e){
-            System.out.println("catch 1");
+            System.out.println("catch 1 " + e);
         }catch (Task10_2 e){
-            System.out.println("catch 2");
+            System.out.println("catch 2 " + e);
         }catch (RuntimeException e){
-            System.out.println("catch 3");
+            System.out.println("catch 3 " + e);
         } catch (Exception e){
-            System.out.println("catch 4");
+            System.out.println("catch 4 " + e);
         }
 
         ///Task10_4
@@ -38,7 +38,7 @@ public class Main {
         try {
             two.f();
         }catch (Exception e){
-            System.out.println("catched");
+            System.out.println("catched in main");
         }
     }
 }
