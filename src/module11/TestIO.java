@@ -1,6 +1,6 @@
 package module11;
 
-public class TestIO_IN {
+public class TestIO {
     public static void main(String[] args) {
 
     }
