@@ -13,10 +13,11 @@ public class PersonController {
         String firstName = requestParams.get(FIRST_NAME);
         String lastName = requestParams.get(LAST_NAME);
         String email = requestParams.get(EMAIL);
-        if ((firstName==null))
+        if ((firstName==null))  ;
 
-        Person person = new Person(firstName, lastName, email);
-        personDao.save(person);
+//        Person person = new Person(firstName, lastName, email);
+//        personDao.save(person);
+        return null;
 
     }
 
