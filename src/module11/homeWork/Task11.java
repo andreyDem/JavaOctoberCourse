@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Task11_1 {
+public class Task11 {
     public static void main(String[] args) {
         System.out.println("===================Original=======================");
         System.out.println(fileToString(addStringInFile()));
