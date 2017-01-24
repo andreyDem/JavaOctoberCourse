@@ -6,7 +6,6 @@ import java.util.Map;
 
 public class Task11_1 {
     public static void main(String[] args) {
-        File file = addStringInFile();
         System.out.println(fileToString());
         System.out.println("=======================================");
         Map<String, String> stringMap = new HashMap<>();
