@@ -10,6 +10,7 @@ public class Task10_4 {
     public void f(){
         try {
             g();
+
         }catch (Task10_2 e){
             System.out.println("catch in runtime");
             throw new SecondExcept();
