@@ -6,7 +6,8 @@ public class Main {
         /// Task10_2
         System.out.println("Task10_2");
         try {
-            throw new Task10_2("someOne");
+            Task10_2 message = new Task10_2("some message");
+            message.printString();
         }catch (Task10_2 e){
             System.out.println("catch 1");
         }catch (RuntimeException e){

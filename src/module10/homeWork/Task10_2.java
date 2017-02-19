@@ -7,8 +7,9 @@ public class Task10_2 extends RuntimeException {
         this.string = string;
     }
 
-    public String printString() {
-        return string;
+    public void printString() {
+        System.out.println(string);
     }
+
 
 }
