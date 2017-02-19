@@ -1,5 +1,7 @@
 package module10.homeWork;
 
+import module10.homeWork.Task10_5.SecondExcept;
+
 public class Task10_4 {
     public void g(){
         throw new Task10_2("exception 1");
@@ -10,7 +12,7 @@ public class Task10_4 {
             g();
         }catch (Task10_2 e){
             System.out.println("catch in runtime");
-            throw new RuntimeException();
+            throw new SecondExcept();
         }catch (Exception e){
             System.out.println("catch in upline");
         }
