@@ -1,4 +1,4 @@
-Andrey try something write ... 1
-Andrey try something write ... 2
-Andrey try something write ... 3
-Add new string
+Andrey <can> something write ... 1
+Andrey <can> something write ... 2
+Andrey <can> something write ... 3
+Add <old> string

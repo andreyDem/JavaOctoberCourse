@@ -24,6 +24,20 @@ public class Task11 {
         System.out.println("==============Searching words in file==============");
         checkWord(file, "Andrey");
         checkWord(file, "not found");
+        System.out.println("=================fileContentMerger==================");
+        Map<String, String> contentToReplace = new HashMap<>();
+        contentToReplace.put("new","<old>");
+        contentToReplace.put("try","<can>");
+        fileContentMerger(contentToReplace);
+    }
+
+    private static File fileContentMerger(Map<String, String> map){
+        File file = new File("TestInput.txt");
+        String replacedString = fileToString(file);
+        for (Map.Entry<String, String> entry : map.entrySet()) {
+            replacedString = replacedString.replaceAll(entry.getKey(), entry.getValue());
+        }
+        return fileWriter(replacedString);
     }
 
     private static File fileAppendString(File file, String s) {
