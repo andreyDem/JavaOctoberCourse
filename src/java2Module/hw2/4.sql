@@ -1,4 +1,4 @@
-#ALTER TABLE projects ADD cost int;
+ALTER TABLE projects ADD cost int;
 
 UPDATE projects SET cost = 8500 WHERE id_project = 1;
 UPDATE projects SET cost = 3500 WHERE id_project = 2;
